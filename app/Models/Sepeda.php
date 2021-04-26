@@ -12,7 +12,7 @@ class Sepeda extends Model
     protected $primaryKey = 'id_sepeda';
     protected $table = 'sepeda';
     protected $fillable = [
-        'id_sepeda',
+        'unit_code',
         'kategori_id',
         'deskripsi',
         'foto_unit',
@@ -20,6 +20,6 @@ class Sepeda extends Model
     ];
 
     public function kategori() {
-        return $this->belongsTo(Kategori::class);
+        return $this->belongsTo(Kategori::class, 'kategori_id');
     }
 }

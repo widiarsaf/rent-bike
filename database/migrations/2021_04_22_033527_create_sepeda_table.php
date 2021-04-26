@@ -15,10 +15,11 @@ class CreateSepedaTable extends Migration
     {
         Schema::create('sepeda', function (Blueprint $table) {
             $table->bigIncrements('id_sepeda');
-            $table->unsignedBigInteger('kategori_id');
+            $table->string('unit_code', 20)->index();
+            $table->unsignedBigInteger('kategori_id')->nullable();
             $table->string('deskripsi');
             $table->string('foto_unit');
-            $table->enum('status', ['dipinjam', 'tersedia']);
+            $table->string('status',20);
             $table->foreign('kategori_id')->references('id_kategori')->on('kategori');
             $table->timestamps();
         });

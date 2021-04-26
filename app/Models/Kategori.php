@@ -16,7 +16,7 @@ class Kategori extends Model
         'nama_kategori',
     ];
 
-    public function Sepeda() {
-        return $this->hasMany(Kategori::class);
+    public function sepeda() {
+        return $this->hasMany(Sepeda::class, 'id_kategori');
     }
 }
