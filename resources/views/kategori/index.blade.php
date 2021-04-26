@@ -5,7 +5,7 @@
 </div>
 <table class="table table-bordered" width="auto">
     <tr>
-        <th>Id Kategori</th>
+        <th>No.</th>
         <th>Nama Kategori</th>
         <th>Aksi</th>
     </tr>
