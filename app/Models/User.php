@@ -16,10 +16,15 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $primaryKey = 'id_pengguna';
     protected $fillable = [
-        'name',
-        'email',
+        'nama',
+        'username',
         'password',
+        'telepon',
+        'foto_profil',
+        'is_admin'
     ];
 
     /**
@@ -32,12 +37,5 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 }

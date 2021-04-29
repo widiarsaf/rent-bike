@@ -16,13 +16,13 @@ class CreateDetailPenyewaanTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('detailPenyewaan', function (Blueprint $table) {
             $table->bigIncrements('id_detailPenyewaan');
-            $table->unsignedBigInteger('penyewaan_id')->nullable();
-            $table->foreign('penyewaan_id')->references('id_penyewaan')->on('penyewaan');
+            $table->string('nota_no')->nullable();
+            $table->foreign('nota_no')->references('no_nota')->on('penyewaan');
             $table->unsignedBigInteger('sepeda_id')->nullable();
             $table->foreign('sepeda_id')->references('id_sepeda')->on('sepeda');
             $table->unsignedBigInteger('paket_id')->nullable();
             $table->foreign('paket_id')->references('id_paket')->on('paket');
-            $table->integer('denda');
+            $table->integer('denda')->nullable();
             $table->timestamps();
         });
     }

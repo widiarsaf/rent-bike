@@ -16,9 +16,10 @@ class CreatePenyewaanTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('penyewaan', function (Blueprint $table) {
             $table->bigIncrements('id_penyewaan');
-            $table->string('status_pembayaran');
-            $table->string('status_pengembalian');
-            $table->string('status_jaminan');
+            $table->string('no_nota')->index();
+            $table->string('status_pembayaran')->nullable();
+            $table->string('status_pengembalian')->nullable();
+            $table->string('status_jaminan')->nullable();
             $table->integer('total_biaya');
             $table->date('tanggal');
             // $table->unsignedBigInteger('pengguna_id')->nullable();

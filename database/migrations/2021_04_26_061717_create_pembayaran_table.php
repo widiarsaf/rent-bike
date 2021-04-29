@@ -17,12 +17,12 @@ class CreatePembayaranTable extends Migration
             $table->bigIncrements('id_pembayaran');
             $table->string('nama_pengirim');
             $table->date('tanggal_bayar');
-            $table->string('foto_bukti');
-            $table->string('keterangan');
+            $table->string('foto_bukti')->nullable();
+            $table->string('keterangan')->nullable();
             $table->string('nominal');
-            $table->string('metode');
-            $table->unsignedBigInteger('penyewaan_id')->nullable();
-            $table->foreign('penyewaan_id')->references('id_penyewaan')->on('penyewaan');
+            $table->string('metode')->nullable();
+            $table->string('nota_no')->nullable();
+            $table->foreign('nota_no')->references('no_nota')->on('penyewaan');
             $table->timestamps();
         });
     }

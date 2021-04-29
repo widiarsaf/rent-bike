@@ -24,16 +24,12 @@
                     <a class="nav-link" data-widget="pushmenu" style="color: #474746" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="top-nav-link">Home</a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="#" class="top-nav-link">Contact</a>
-                </li>
+                <!-- Authentication Links -->
+
             </ul>
 
             <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto mx-5">
+            <ul class="navbar-nav ml-auto" style=" width: 300px !important">
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -62,10 +58,45 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-                <div class="user-panel d-flex mt-1">
-                    <div class="image">
-                        <a href=""><img src="img/user-avatar.png" style="height: 30px; width:30px;" class="img-circle"
-                                alt="User Image"></a>
+                <div class="mx-3">
+                    <div class="image" width="300px" style="width: 200px !important; display: flex;">
+
+                        <div style="display : flex;">
+                            @guest
+                            @if (Route::has('login'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                            @endif
+                            @else
+                            <li class="nav-item dropdown">
+                                <a href=""><img src="img/user-avatar.png" style="height: 30px; width:30px;"
+                                        class="img-circle" alt="User Image"></a>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->username }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                            @endguest
+                        </div>
+
                     </div>
                 </div>
             </ul>
@@ -155,6 +186,7 @@
                                 </p>
                             </a>
                         </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

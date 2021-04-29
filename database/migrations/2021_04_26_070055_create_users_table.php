@@ -19,9 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('username', 100);
             $table->string('password');
             $table->string('telepon',15);
-            $table->string('foto_profil');
-            $table->unsignedBigInteger('level_id')->nullable();
-            $table->foreign('level_id')->references('id_level')->on('level');
+            $table->string('foto_profil')->nullable();
+            $table->boolean('is_admin')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\SepedaController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +18,12 @@ use App\Http\Controllers\SepedaController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('indexAdmin');
 });
 
-//Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('sepeda', SepedaController::class);
 Route::resource('kategori', KategoriController::class);
