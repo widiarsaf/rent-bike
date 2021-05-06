@@ -5,6 +5,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\SepedaController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,12 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('indexAdmin');
+    return view('customer.product');
 });
+
+
+Route::get('detail/{sepeda}', [SepedaController::class, 'detail'])->name('sepeda.detail');
+Route::get('cart/', [CartController::class, 'store'])->name('customer.cart');
 
 Auth::routes();
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
@@ -28,3 +33,5 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resource('sepeda', SepedaController::class);
 Route::resource('kategori', KategoriController::class);
 Route::resource('paket', PaketController::class);
+Route::resource('cart', CartController::class);
+

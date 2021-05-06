@@ -75,6 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'telepon'  => $data['telepon'],
             'is_admin' => $data['is_admin'],
+
         ]);
     }
     else{
@@ -83,6 +84,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'password' => Hash::make($data['password']),
             'telepon'  => $data['telepon'],
+            'is_admin' => 0,
             ]);
 
     }

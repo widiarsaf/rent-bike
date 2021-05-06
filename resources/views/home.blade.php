@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('Halaman User!') }}
+
                 </div>
             </div>
         </div>

@@ -76,8 +76,8 @@
                             @endif
                             @else
                             <li class="nav-item dropdown">
-                                <a href=""><img src="img/user-avatar.png" style="height: 30px; width:30px;"
-                                        class="img-circle" alt="User Image"></a>
+                                {{-- <a href=""><img src="img/user-avatar.png" style="height: 30px; width:30px;"
+                                        class="img-circle" alt="User Image"></a> --}}
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->username }}

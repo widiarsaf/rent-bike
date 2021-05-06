@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sepeda;
 use App\Models\Kategori;
+use App\Models\Paket;
 use Illuminate\Support\Facades\Storage;
 
 class SepedaController extends Controller
@@ -12,7 +13,17 @@ class SepedaController extends Controller
     public function index()
     {
         $sepeda = Sepeda::with('kategori')->get();
-        return view('sepeda.index', compact('sepeda'));
+        $paket = Paket::all();
+        return view('sepeda.index', compact('sepeda', 'paket'));
+    }
+    public function detail($id_sepeda)
+    {
+        $sepeda = Sepeda::with('kategori')
+            ->where('id_sepeda', $id_sepeda)
+            ->first();
+        $paket = Paket::all();
+        // dd($paket);
+        return view('customer.detail', compact('sepeda', 'paket'));
     }
 
     public function create()

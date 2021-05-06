@@ -19,6 +19,7 @@ class User extends Authenticatable
 
     protected $primaryKey = 'id_pengguna';
     protected $fillable = [
+        'id_pengguna',
         'nama',
         'username',
         'password',
@@ -36,6 +37,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function cart() {
+        return $this->hasMany(Cart::class, 'id_pengguna');
+    }
+
 
 
 }
