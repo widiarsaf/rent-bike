@@ -31,8 +31,8 @@
         <th>Status</th>
         <th>Aksi</th>
     </tr>
-    <tr>
-        @foreach($sepeda as $spd)
+
+    @foreach($sepeda as $spd)
     <tr>
         <td>{{$spd->unit_code}}</td>
         <td>{{$spd->kategori->nama_kategori}}</td>

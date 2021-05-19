@@ -38,7 +38,7 @@ class SepedaController extends Controller
             'unit_code' => 'required',
             'kategori_id' => 'required',
             'deskripsi' => 'required',
-            'foto_unit' => 'required',
+            'foto_unit' => 'nullabel',
             'status' => 'required',
         ]);
 
@@ -83,7 +83,7 @@ class SepedaController extends Controller
             'unit_code' => 'required',
             'kategori_id' => 'required',
             'deskripsi' => 'required',
-            'foto_unit' => 'required',
+            'foto_unit' => 'nullable',
             'status' => 'required',
         ]);
 

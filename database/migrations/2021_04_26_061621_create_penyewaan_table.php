@@ -22,8 +22,8 @@ class CreatePenyewaanTable extends Migration
             $table->string('status_jaminan')->nullable();
             $table->integer('total_biaya');
             $table->date('tanggal');
-            // $table->unsignedBigInteger('pengguna_id')->nullable();
-            // $table->foreign('pengguna_id')->references('id_pengguna')->on('users');
+            $table->unsignedBigInteger('pengguna_id')->nullable();
+            $table->foreign('pengguna_id')->references('id_pengguna')->on('users');
             $table->timestamps();
         });
     }

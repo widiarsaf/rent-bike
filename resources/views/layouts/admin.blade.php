@@ -109,7 +109,7 @@
             <a href="../../index3.html" class="brand-link mt-3">
                 <img src="img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text" style="color:white !important">Rental Bike</span>
+                <h4 class="simple-text" style="color:white !important">Rental Bike</h4>
             </a>
             <hr style="background: rgb(73, 73, 73); height: 1.2px">
 

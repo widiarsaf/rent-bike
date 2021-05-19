@@ -7,8 +7,8 @@
     <ul>
         @foreach ($errors->all() as $error)
         <li>{{ $error }}</li>
-        @endforeach
-    </ul>
+@endforeach
+</ul>
 </div>
 @endif
 <form method="post" action="{{ route('sepeda.store') }}" id="myForm" enctype="multipart/form-data">
